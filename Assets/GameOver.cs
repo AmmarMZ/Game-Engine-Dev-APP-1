@@ -20,6 +20,9 @@ public class GameOver : MonoBehaviour
     {
         if (TargetScript.totalShots == 11) {
             gameObject.GetComponent<MeshRenderer>().enabled = true;
+            if (ScoreScript.score == 10) {
+                scoreText.text = "Perfect! You scored " + ScoreScript.score + " points";
+            }
             if (ScoreScript.score > 0) {
                 scoreText.text = "Winner! You scored " + ScoreScript.score + " points";
             }
