@@ -24,5 +24,6 @@ public class GunScript : MonoBehaviour
     public void shootProjectile() {
         GameObject b = Instantiate(projectile) as GameObject;
         b.transform.position = gameObject.transform.position;
+        b.transform.position += new Vector3(0,0,5);
     }
 }
