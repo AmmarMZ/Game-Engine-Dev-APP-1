@@ -6,7 +6,6 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 0.5f;
     private Rigidbody rb;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +27,11 @@ public class Projectile : MonoBehaviour
     void OnCollisionEnter(Collision col) {
         if(col.gameObject.tag.Equals("target")) {
             ScoreScript.score += 1;
-            
+            Destroy(this.gameObject);
+        }
+        else if (col.gameObject.tag.Equals("miss")) {
+            ScoreScript.score -= 1;
+            Destroy(this.gameObject);
         }
     }
 }
